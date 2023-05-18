@@ -1,0 +1,17 @@
+table{
+  width:  70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+th{
+  background-color: #666;
+  color: white;
+}
+tr:nth-child(even){
+  background-color: #ddd;
+  color: black;
+}
+tr:nth-child(odd){
+  background-color: #eee;
+  color: black;
+}
