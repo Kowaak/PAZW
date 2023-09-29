@@ -1,0 +1,44 @@
+<html>
+<head>
+    <title>jQuery - zdarzenia</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="styl.css" />
+    <style>
+    h2 {
+        background-color: blue;
+        border: 1px solid black;
+    }
+    </style>
+    <script src="jquery-3.7.1.js"></script>
+    <script type="text/javascript">
+    $(function() {
+    $('input').on('keydown keyup keypress', function() {
+    $('span').eq(0).text(' ' + event.type);
+    });
+    $('input').on('keydown keypress', function() {
+    $('span').eq(1).text(event.which);
+    });
+    $('h2').on('click dblclick mouseover mouseout', function() {
+    $('span').eq(0).text(' ' + event.type);
+    const target = $(event.target);
+    if (wtarget.is('h2')) $('span').eq(1).text('Nie dotyczy');
+    });
+    $('input, h2').on('click', function() {
+    $('span').eq(2).text(event.target.nodeName);
+    });
+    });
+    </script>
+</head>
+    <body>
+        <div id="container">
+            <div id="page">
+                Uaktywnij pole i sprawdź, co się stanie po naciśnięciu klawisza,
+                wypróbuj różne kombinacje: <input type="text"><br>
+                <h2>Najedź na mnie myszką</h2>
+                <p>Typ zdarzenia: <span></span></p>
+                <p>Numer znaku: <span></span></p>
+                <p>Zdarzenie zainicjował element: <span></span></p>
+            </div>
+        </div>
+</body>
+</html>
