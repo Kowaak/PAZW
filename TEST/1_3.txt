@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Zadania jQuery - pazw</title>
+
+    <style>
+      body {
+        background-color: #323232;
+        color: #fff;
+      }
+      .color {
+        background-color: blue;
+      }
+      .fontSize {
+        font-size: 150%;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="color fontSize">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+      labore et dolore magna aliqua. Mauris sit amet massa vitae. Amet justo donec enim diam
+      vulputate ut pharetra sit amet. Egestas dui id ornare arcu odio ut. Metus dictum at tempor
+      commodo ullamcorper a. Ultrices in iaculis nunc sed augue. Quam viverra orci sagittis eu
+      volutpat odio facilisis mauris. Nisi porta lorem mollis aliquam ut porttitor leo a diam.
+      Fermentum odio eu feugiat pretium nibh ipsum consequat nisl. Euismod in pellentesque massa
+      placerat duis ultricies lacus. Eu tincidunt tortor aliquam nulla facilisi cras fermentum odio.
+    </p>
+
+    <button id="btn">Przycisk</button>
+
+    <script>
+      $(document).ready(function () {
+        $("#btn").click(function () {
+          $("p").removeClass("color fontSize");
+        });
+      });
+    </script>
+  </body>
+</html>

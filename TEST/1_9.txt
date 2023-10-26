@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Zadania jQuery - pazw</title>
+
+    <style>
+      body {
+        background-color: #323232;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <label><input type="checkbox" name="color" value="biały" /> Biały</label><br />
+    <label><input type="checkbox" name="color" value="czarny" /> Czarny</label><br />
+    <label><input type="checkbox" name="color" value="zielony" /> Zielony</label><br />
+    <label><input type="checkbox" name="color" value="niebieski" /> Niebieski</label><br />
+    <label><input type="checkbox" name="color" value="czerwony" /> Czerwony</label><br />
+    <p id="info"></p>
+
+    <script>
+      $(document).ready(function () {
+        $("input[name='color']").change(function () {
+          let count = $("input[name='color']:checked").length;
+
+          if (count === 1) {
+            $("#info").text("Zaznaczono 1 pole");
+          } else {
+            $("#info").text("Zaznaczono " + count + " pól");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
