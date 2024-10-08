@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Zadania jQuery - pazw</title>
+
+    <style>
+      body {
+        background-color: #323232;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Dowolny tekst</h1>
+    <h2>Dowolny tekst</h2>
+    <p>Dowolny tekst</p>
+    <span>Dowolny tekst</span> <br />
+    <button>Dowolny tekst</button>
+
+    <p id="info"></p>
+
+    <script>
+      $(document).ready(function () {
+        // Rozwiazanie pierwsze
+        $("h1, h2, p, span, button").click(function () {
+          alert("Kliknięto element: " + this.tagName);
+        });
+
+        // Rozwiazanie drugie
+        $("h1, h2, p:not(#info), span, button").click(function () {
+          $("#info").text("Kliknięto element: " + this.tagName);
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,8 +1,0 @@
-def szukaj_b(T):
-    n = len(T)
-    for i in range(n):
-        if T[i] % 2 == 0:
-            return "TAK"
-    return "NIE"
-
-print(szukaj_b([7,5,6,4,5,3,4,8,2,3,9]))

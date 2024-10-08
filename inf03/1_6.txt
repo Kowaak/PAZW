@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Zadania jQuery - pazw</title>
+
+    <style>
+      body {
+        background-color: #323232;
+        color: #fff;
+      }
+      #myParagraph {
+        width: 200px;
+        background-color: white;
+        color: black;
+        border: 2px solid grey;
+        padding: 10px;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="myParagraph">Jan</p>
+    <button id="startBtn">Start</button>
+    <button id="resetBtn">Przywróć</button>
+
+    <script>
+      $(document).ready(function () {
+        $("#startBtn").click(function () {
+          $("#myParagraph").animate(
+            {
+              width: "400px",
+              fontSize: "32px",
+              borderWidth: "20px",
+            },
+            1000
+          );
+        });
+
+        $("#resetBtn").click(function () {
+          $("#myParagraph").css({
+            width: "200px",
+            fontSize: "16px",
+            borderWidth: "2px",
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

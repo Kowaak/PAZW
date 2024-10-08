@@ -1,0 +1,12 @@
+def szukaj_d(T):
+    n = len(T)
+    for i in range(n):
+        if T[i] < 10:
+            return "TAK"
+    return "NIE"
+
+T = []
+n = int(input("Podaj liczbę elementów listy: "))
+for i in range(n):
+    T.append(int(input()))
+print(szukaj_d(T))

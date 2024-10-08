@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Zadania jQuery - pazw</title>
+
+    <style>
+      body {
+        background-color: #323232;
+        color: #fff;
+      }
+      #square {
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+        position: relative;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="leftBtn">W lewo</button>
+    <button id="rightBtn">W prawo</button>
+    <div id="square"></div>
+
+    <script>
+      $(document).ready(function () {
+        $("#leftBtn").click(function () {
+          let currentPos = $("#square").position().left;
+          $("#square").css("left", currentPos - 80 + "px");
+        });
+
+        $("#rightBtn").click(function () {
+          let currentPos = $("#square").position().left;
+          $("#square").css("left", currentPos + 80 + "px");
+        });
+      });
+    </script>
+  </body>
+</html>

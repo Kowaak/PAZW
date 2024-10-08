@@ -1,0 +1,21 @@
+def F(x):
+    return x ** 3 - 8
+
+def oblicz(p,q,L):
+    s = (p + q) / 2
+    i = 0
+    while F(p) != 0 and F(q) != 0 and i < L:
+        s = (p + q) / 2
+        if F(p) * F(s) > 0:
+            p = s
+        else:
+            q = s
+        i += 1
+    if F(p) == 0:
+        return p
+    if F(q) == 0:
+        return q
+    return s
+
+print(round(oblicz(-1,4,12),6))
+print(round(oblicz(-1,4,50),6))
