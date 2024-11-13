@@ -1,0 +1,3 @@
+To jest treść pliku, która zostanie zamieniona na wielkie litery.
+
+Dodałem nową linijkę.
