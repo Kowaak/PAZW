@@ -20,25 +20,25 @@ http.createServer(function (request, response) {
     if (request.method === 'POST' && request.url === '/submit') {
         let body = '';
 
-        // Collect the data from the request
+        // Zbieranie danych z żądania
         request.on('data', chunk => {
-            body += chunk.toString(); // Convert Buffer to string
+            body += chunk.toString(); // Konwertuj Buffer na string
         });
 
-        // Once all data has been collected
+        // Po zebraniu wszystkich danych
         request.on('end', () => {
-            // Manually parse the form data
+            // Ręczne parsowanie danych formularza
             const postData = {};
             body.split('&').forEach(pair => {
                 const [key, value] = pair.split('=');
                 postData[decodeURIComponent(key)] = decodeURIComponent(value.replace(/\+/g, ' '));
             });
 
-            // Prepare the SQL query to insert the data
+            // Przygotowanie zapytania SQL do wstawienia danych
             const sql = 'INSERT INTO users (imie, nazwisko) VALUES (?, ?)';
             const values = [postData.imie, postData.nazwisko];
 
-            // Execute the SQL query
+            // Wykonanie zapytania SQL
             db.query(sql, values, (error, results) => {
                 if (error) {
                     console.error('Błąd podczas wstawiania danych: ' + error.stack);
@@ -47,22 +47,22 @@ http.createServer(function (request, response) {
                     return;
                 }
 
-                // After inserting, render the main page with the form and data
+                // Po wstawieniu, renderuj główną stronę z formularzem i danymi
                 renderMainPage(response);
             });
         });
     } else if (request.method === 'GET' && request.url === '/') {
-        // Render the main page with the form and data
+        // Renderuj główną stronę z formularzem i danymi
         renderMainPage(response);
     } else {
-        // Handle 404 Not Found
+        // Obsługa 404 Nie znaleziono
         response.writeHead(404, { 'Content-Type': 'text/plain' });
-        response.end('404 Not Found');
+        response.end('404 Nie znaleziono');
     }
 }).listen(8081);
 
 function renderMainPage(response) {
-    // Fetch data from the database
+    // Pobierz dane z bazy danych
     const sql = 'SELECT * FROM users';
     db.query(sql, (error, results) => {
         if (error) {
@@ -72,14 +72,14 @@ function renderMainPage(response) {
             return;
         }
 
-        // Create an HTML table to display the data
+        // Utwórz tabelę HTML do wyświetlania danych
         let table = '<table border="1"><tr><th>id</th><th>Imie</th><th>Nazwisko</th></tr>';
         results.forEach(row => {
             table += `<tr><td>${row.id}</td><td>${row.imie}</td><td>${row.nazwisko}</td></tr>`;
         });
         table += '</table>';
 
-        // Render the form and the data table
+        // Renderuj formularz i tabelę danych
         response.writeHead(200, { 'Content-Type': 'text/html' });
         response.end(`
             <html>
