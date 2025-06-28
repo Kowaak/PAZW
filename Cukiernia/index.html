@@ -19,7 +19,7 @@
       <nav class="navbar navbar-expand-sm navbar">
         <div class="container-fluid">
 
-          <a class="navbar-brand" href="#"><img src="./img/logo.png" alt="Logotyp Cukiernia sweetdreams Lublin"></a>
+          <a class="navbar-brand" href="index.html"><img src="./img/logo.png" alt="Logotyp Cukiernia sweetdreams Lublin"></a>
 
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
@@ -49,8 +49,8 @@
     <section id="banner">
       <div>
         <div class="title-overlay">
-          <h2>Najlepsza Cukiernia w Lublinie</h2>
-          <button type="button" class="btn btn-dark" style="color: #ffffff;">Pobierz menu w PDF</button>
+          <h2>Cukiernia Sweet Dreams - Najlepsza cukiernia w Lublinie</h2>
+          <a type="button" href="./files/menu.pdf" target="_blank" class="btn btn-dark" style="color: #ffffff;">Sprawdź Nasze Menu</a>
         </div>
         <div id="demo" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner">
@@ -102,9 +102,12 @@
           </div>
           <div class="col-9">
             <h1>O nas</h1>
-            <h3>
+            <p>
               Cukiernia powstała w 1972 roku w Lublinie. Jest rodzinną firmą specjalizującą się w produkcji różnego rodzaju wyrobów ciastkarskich, deserów, potrawy śniadaniowych. Nasza cukiernia cieszy się dużym uznanie, klientów, którzy bardzo chwalą wysokie walory smakowe, różnorodność dodatków i dekoracji. Firma stosuje naturalne składniki bez konserwantów.<br/><br/><br/>
-            </h3>
+            </p>
+            <p>
+              Nasi cukiernicy uczyli sie od mistrzów cukiernictwa z Francji 
+            </p>
           </div>
         </div>
       </div>
@@ -126,22 +129,26 @@
           <div class="col">
             <form>
               <div class="mb-3">
-                <label for="name" class="form-label">Name</label>
-                <input type="text" class="form-control" id="name">
+                <label for="imie" class="form-label">Imie</label>
+                <input type="text" class="form-control" id="imie">
               </div>
               <div class="mb-3">
-                <label for="surname" class="form-label">Surname</label>
-                <input type="text" class="form-control" id="surname">
+                <label for="surname" class="form-label">Nazwisko</label>
+                <input type="text" class="form-control" id="nazwisko">
               </div>
               <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
                 <input type="email" class="form-control" id="email">
               </div>
               <div class="mb-3">
-                <label for="message" class="form-label">Message</label>
-                <textarea class="form-control" id="message" rows="4"></textarea>
+                <label for="telefon" class="form-label">Telefon</label>
+                <input type="telefon" class="form-control" id="telefon">
               </div>
-              <button type="submit" class="btn btn-dark w-100 rounded-3">Submit</button>
+              <div class="mb-3">
+                <label for="wiadomosc" class="form-label">uwagi/zapytanie</label>
+                <textarea class="form-control"rows="4" id="wiadomosc"></textarea>
+              </div>
+              <button type="submit" class="btn btn-dark w-100 rounded-3">Wyślij</button>
             </form>
           </div>
         </div>
