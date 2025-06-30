@@ -127,26 +127,26 @@
             </h3>
           </div>
           <div class="col">
-            <form>
+            <form action="mail.php" method="post">
               <div class="mb-3">
                 <label for="imie" class="form-label">Imie</label>
-                <input type="text" class="form-control" id="imie">
+                <input type="text" class="form-control" id="imie" name="imie">
               </div>
               <div class="mb-3">
                 <label for="nazwisko" class="form-label">Nazwisko</label>
-                <input type="text" class="form-control" id="nazwisko">
+                <input type="text" class="form-control" id="nazwisko" name="nazwisko">
               </div>
               <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email">
+                <input type="email" class="form-control" id="email" name="email">
               </div>
               <div class="mb-3">
                 <label for="telefon" class="form-label">Telefon</label>
-                <input type="telefon" class="form-control" id="telefon">
+                <input type="telefon" class="form-control" id="telefon" name="telefon">
               </div>
               <div class="mb-3">
                 <label for="wiadomosc" class="form-label">uwagi/zapytanie</label>
-                <textarea class="form-control"rows="4" id="wiadomosc"></textarea>
+                <textarea class="form-control" rows="4" id="wiadomosc" name="wiadomosc"></textarea>
               </div>
               <button type="submit" class="btn btn-dark w-100 rounded-3">Wyślij</button>
             </form>
