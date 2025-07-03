@@ -8,6 +8,9 @@
     width: 100%;
 }
 .title-overlay h2 {
+    margin-left: 30%;
+    margin-right: 30%;
+    background-color: #ffffff;
     color: #000;
     font-weight: bold;
 }
@@ -68,5 +71,7 @@
     transition: 1s;
 }
 @media screen and (max-width: 768px) {
-    
+    #top{
+        font-size: small;
+    }
 }
